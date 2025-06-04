@@ -3,16 +3,23 @@
 npm run dev
 ```
 
-`http://localhost:4111/api`にアクセスすると「Hello to the Mastra API!」文字列が取得できます。
+### Top画面
+http://localhost:4111にアクセスすると実装されているエージェントなどの一覧が確認できます。
+
+
+### API
+apiパス以下にRest API
+- `http://localhost:4111/api`にアクセスすると「Hello to the Mastra API!」文字列が取得できます。
+
+天気取得エージェントにメッセージを送るデモ
+```
+curl -X POST http://localhost:4111/api/agents/weatherAgent/generate \
+ -H "Content-Type: application/json" \
+ -d '{"messages": ["What is the weather in Tokyo Japan?"]}'
+ ```
 
 ### Swagger
 
 http://localhost:4111/swagger-ui
 
 
-### 天気取得デモ
-```
-curl -X POST http://localhost:4111/api/agents/weatherAgent/generate \
- -H "Content-Type: application/json" \
- -d '{"messages": ["What is the weather in Tokyo Japan?"]}'
- ```
