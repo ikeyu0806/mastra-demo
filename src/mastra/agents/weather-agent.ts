@@ -1,7 +1,7 @@
-import { openai } from '@ai-sdk/openai';
-import { Agent } from '@mastra/core/agent';
-import { Memory } from '@mastra/memory';
-import { LibSQLStore } from '@mastra/libsql';
+import { openai } from '@ai-sdk/openai'
+import { Agent } from '@mastra/core/agent'
+import { Memory } from '@mastra/memory'
+import { LibSQLStore } from '@mastra/libsql'
 
 export const weatherAgent = new Agent({
   name: 'Weather Agent',
@@ -24,4 +24,4 @@ export const weatherAgent = new Agent({
       url: 'file:../mastra.db', // path is relative to the .mastra/output directory
     }),
   }),
-});
+})

@@ -1,15 +1,15 @@
-import { MCPClient } from "@mastra/mcp";
+import { MCPClient } from '@mastra/mcp'
 
 // Configure MCPClient to connect to your server(s)
 export const mcp = new MCPClient({
   servers: {
     filesystem: {
-      command: "npx",
+      command: 'npx',
       args: [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/Users/ikegaya_y/workspace/mastra-demo/mcpDemo",
+        '-y',
+        '@modelcontextprotocol/server-filesystem',
+        '/Users/ikegaya_y/workspace/mastra-demo/mcpDemo',
       ],
     },
   },
-});
+})
