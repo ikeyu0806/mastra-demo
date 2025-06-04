@@ -2,8 +2,8 @@ import { Mastra } from '@mastra/core/mastra'
 import { PinoLogger } from '@mastra/loggers'
 import { LibSQLStore } from '@mastra/libsql'
 
-import { weatherAgent } from './agents/weather-agent'
-import { mcpAgent } from './agents/mcp-agent'
+import { weatherAgent } from './agents/weatherAgent'
+import { mcpAgent } from './agents/mcpAgent'
 
 export const mastra = new Mastra({
   agents: { weatherAgent, mcpAgent },
