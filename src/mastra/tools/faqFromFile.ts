@@ -19,7 +19,7 @@ export const faqFromFile = createTool({
   }),
   description: `Fetches the FAQ information from a file`,
   execute: async () => {
-    const filePath = join(__dirname, '../../src/mastra/texts/faq.txt')
+    const filePath = join(__dirname, '../../../src/mastra/texts/faq.txt')
     const contents = fs.readFileSync(filePath, 'utf8')
 
     return {
