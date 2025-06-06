@@ -18,6 +18,13 @@ curl -X POST http://localhost:4111/api/agents/weatherAgent/generate \
  -d '{"messages": ["What is the weather in Tokyo Japan?"]}'
  ```
 
+FAQエージェントに質問するデモ
+```
+curl -X POST http://localhost:4111/api/agents/faqAgent/generate \
+ -H "Content-Type: application/json" \
+ -d '{"messages": ["タレントのプロフィールを修正するには？"]}'
+```
+
 ### Swagger
 
 http://localhost:4111/swagger-ui
