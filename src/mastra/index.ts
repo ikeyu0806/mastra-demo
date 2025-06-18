@@ -17,4 +17,25 @@ export const mastra = new Mastra({
     name: 'Mastra',
     level: 'info',
   }),
+  // 以下追加
+  server: {
+    middleware: [
+      {
+        handler: async (c, next) => {
+          const authHeader = c.req.header('Authorization')
+          console.log('Authorization Header:', authHeader)
+          if (!authHeader) {
+            return new Response('Unauthorized', { status: 401 })
+          }
+
+          await next()
+        },
+        path: '/api/*',
+      },
+      async (c, next) => {
+        console.log(`${c.req.method} ${c.req.url} ${c.req.header}`)
+        await next()
+      },
+    ],
+  },
 })
