@@ -29,6 +29,10 @@ export const mastra = new Mastra({
           }
 
           await next()
+
+          // CORS
+          c.res.headers.set('Access-Control-Allow-Origin', 'http://localhost:5173')
+          c.res.headers.set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
         },
         path: '/api/*',
       },
