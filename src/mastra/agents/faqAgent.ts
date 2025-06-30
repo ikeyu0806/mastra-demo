@@ -1,7 +1,5 @@
 import { openai } from '@ai-sdk/openai'
 import { Agent } from '@mastra/core/agent'
-import { Memory } from '@mastra/memory'
-import { LibSQLStore } from '@mastra/libsql'
 import { faqFromFile } from '../tools/faqFromFile'
 
 export const faqAgent = new Agent({
@@ -18,10 +16,4 @@ export const faqAgent = new Agent({
   model: openai('gpt-4o-mini'),
 
   tools: { faqFromFile },
-
-  memory: new Memory({
-    storage: new LibSQLStore({
-      url: 'file:../mastra.db', // path is relative to the .mastra/output directory
-    }),
-  }),
 })
